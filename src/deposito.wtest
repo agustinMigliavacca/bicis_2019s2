@@ -1,0 +1,45 @@
+import depositos.* 
+import accesorios.*
+import bicis.*
+
+test "Deposito" {
+
+	const bici1 = new Bicis()
+	bici1.rodado(28)
+	bici1.largo(150)
+	bici1.marca("niker")
+	bici1.nAccesorio(farolito)
+	
+	const bici2 = new Bicis()
+	bici2.rodado(25)
+	bici2.largo(130)
+	bici2.marca("monday")
+	canasto.volumen(8)
+	morral.largo(21)
+	morral.ojoDeGato(true)
+	bici2.nAccesorio(farolito)
+	bici2.nAccesorio( morral)
+	bici2.nAccesorio( canasto)
+	
+	const bici3 = new Bicis()
+	bici3.rodado(20)
+	bici3.largo(90)
+	bici3.marca("monday")
+	morral.largo(6)
+	morral.ojoDeGato(false)
+	bici3.nAccesorio(morral)
+	
+	const depo1 = new Deposito()
+	depo1.nBicis(bici1)
+	depo1.nBicis(bici2)
+	depo1.nBicis(bici3)
+	
+	
+	assert.equals([bici1,bici2],depo1.bicisRapidas())
+	assert.equals(#{"niker", "monday"}, depo1.coleccion())
+	assert.notThat(depo1.esNocturno())
+	assert.that(depo1.tieneBici(10) )
+	assert.equals(0, depo1.cargaTotal())
+	assert.equals(0, depo1.cantidadBicisSin())
+	assert.equals( "niker" , depo1.masRapida())
+	}

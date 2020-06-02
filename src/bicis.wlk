@@ -10,7 +10,9 @@ class Bicis {
 	method altura() {
 		return rodado * 2.5 + 15
 	}
-	
+	method accesorios() {
+		return accesorios
+	}
 	method velDeCrucero() {
 		if(largo > 120 ) {
 		return 	rodado + 6

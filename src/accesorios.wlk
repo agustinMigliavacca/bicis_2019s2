@@ -43,6 +43,13 @@ object morral {
 	}
 	
 	method esLuminoso() {
-		
+		return false
 	}
 }
+
+
+/*
+ se deberia agragar nuevos objetos con los tipos de accesorios y que
+ sean polimofircos con los otros objetos q entiendan los mismos mensajes
+  
+ */
